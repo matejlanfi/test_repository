@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semestralkaa.gui.FXMLDocumentController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="178.0" style="-fx-background-color: #DFDFDF;">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ChoiceBox fx:id="ChoiseKraj" prefHeight="25.0" prefWidth="731.0">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <CheckBox fx:id="chkboxNadPrumer" mnemonicParsing="false" onAction="#chkboxNadPrumerHandler" text="Pouze obce nad průměr">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="chZobrazVse" mnemonicParsing="false" onAction="#chZobrazVseHandler" text="Zobraz všechny obce">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <ChoiceBox fx:id="ChoiseFunc" prefHeight="25.0" prefWidth="627.0">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane fx:id="paneAdd" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <CheckBox fx:id="chkOwnObec" layoutY="14.0" mnemonicParsing="false" onAction="#chkOwnObecHandelr" text="Manualní přidaní obce" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                              <Button fx:id="btnGenerate" layoutX="6.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnGenerateHandler" text="Generovat obec" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="25.0" />
+                              <AnchorPane fx:id="PaneAddInside" disable="true" layoutY="23.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="5.0" text="Obec:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="6.0" />
+                                    <TextField fx:id="txFieldObec" layoutX="37.0" layoutY="1.0" promptText="název obce" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="1.0" />
+                                    <Label layoutX="7.0" layoutY="27.0" text="PSC:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="35.0" />
+                                    <TextField fx:id="txFieldPSC" layoutX="40.0" layoutY="32.0" promptText="Poštovní směrovací číslo" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="32.0" />
+                                    <Label text="Počet Mužů:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="67.0" />
+                                    <TextField fx:id="txFieldPcMuzu" layoutX="75.33333333333333" layoutY="64.0" prefHeight="25.0" prefWidth="114.0" promptText="Počet Mužů" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="63.0" />
+                                    <Label layoutX="15.0" layoutY="91.0" text="Počet Žen:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="99.0" />
+                                    <TextField fx:id="txFieldPcZen" layoutX="75.33333333333333" layoutY="88.0" prefHeight="25.0" prefWidth="114.0" promptText="Počet žen" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="94.0" />
+                                    <Button fx:id="btnAddObec" layoutX="74.0" layoutY="126.0" mnemonicParsing="false" onAction="#btnAddObec" text="Přidat" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="156.0" />
+                                    <ChoiceBox fx:id="ChAddPozice" layoutX="17.0" layoutY="131.0" prefWidth="150.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="125.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paneDelete" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <ChoiceBox fx:id="ChDelete" layoutX="14.0" layoutY="14.0" prefWidth="150.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="5.0" />
+                              <Button fx:id="btnDelete" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnDeleteHandler" text="Odstranit" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Button fx:id="btnDeleteKraj" mnemonicParsing="false" onAction="#btnDeleteKrajHandler" prefHeight="25.0" prefWidth="616.0" text="Zruš Kraj">
+               <VBox.margin>
+                  <Insets left="3.0" right="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveHandle" prefHeight="25.0" prefWidth="778.0" text="Ulož">
+               <VBox.margin>
+                  <Insets left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnImport" mnemonicParsing="false" onAction="#btnImportHandler" prefHeight="25.0" prefWidth="745.0" text="Načíst">
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="359.0" prefWidth="50.0">
+                     <children>
+                        <Button fx:id="btnLoadPrevios" maxHeight="29.0" mnemonicParsing="false" onAction="#btnLoadPreviosHandler" prefHeight="29.0" text="&lt;">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <AnchorPane maxHeight="200.0" maxWidth="200.0" prefHeight="135.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="lbObec" layoutX="14.0" layoutY="14.0" text="Obec:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="20.0" />
+                              <Label fx:id="lbPSC" layoutX="15.0" layoutY="41.0" text="PSC:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0" />
+                              <Label fx:id="lbPcMuzu" layoutX="12.0" layoutY="69.0" text="Počet mužů:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="60.0" />
+                              <Label fx:id="lbPcZen" layoutX="12.0" layoutY="77.0" text="Počet žen:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0" />
+                              <Label fx:id="lbPcCelkem" layoutX="15.0" layoutY="100.0" text="Celkový počet:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" prefHeight="300.0" prefWidth="50.0">
+                     <children>
+                        <Button fx:id="btnLoadNext" maxHeight="29.0" mnemonicParsing="false" onAction="#btnLoadNextHandler" prefHeight="29.0" text="&gt;">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="41.0" prefWidth="422.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="51.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="btnLoadPrvni" mnemonicParsing="false" onAction="#btnLoadPrvniHandler" text="Prvni">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="85.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="btnLoadPosledni" mnemonicParsing="false" onAction="#btnLoadPosledniHandler" text="Posledni">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>
